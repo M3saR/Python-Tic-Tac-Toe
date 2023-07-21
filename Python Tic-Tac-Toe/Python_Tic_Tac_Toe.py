@@ -66,7 +66,11 @@ def player_move(board):
             board[x][y]='O'
             break
         else:
-            square=int(input(("This square is taken. Please try again ")))
+            try:
+                square=int(input(("This square is taken. Please try again ")))
+            except:
+                print("You must choose a number. Try again in new game")
+                return True
 
 def free_fields(board):
     free_square=[]
